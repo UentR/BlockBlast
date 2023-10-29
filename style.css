@@ -1,0 +1,120 @@
+* {
+	outline: red dashed 0px;
+}
+
+body {
+	--size: min(90vw, 50vh);
+	--BGC: #f9f8f6;
+	--BGGC: #ff00ff;
+	--EBBGC: #c7cedb;
+	--FBBGC: red;
+
+	font-family: "Poppins", sans-serif;
+	background: var(--BGC);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+div.name {
+	position: sticky;
+	top: 2%;
+	justify-content: center;
+	text-align: center;
+	margin-top: 5%;
+	font-weight: bold;
+	border-radius: 60px;
+	backdrop-filter: blur(15px);
+	width: auto;
+}
+
+h3 {
+	width: auto;
+	margin: 0;
+	font-size: 200%;
+	background: linear-gradient(-5deg, #5f9568, #54a66c);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+div.Container {
+	display: flex;
+	flex-direction: column;
+	width: var(--size);
+	height: var(--size);
+	margin-inline: 12.5%;
+	margin-block: 5%;
+	aspect-ratio: 1/1;
+	height: auto;
+}
+
+div.Manager {
+	display: flex;
+	margin: 3%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+div.Up {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 3%;
+}
+
+div.Up input {
+	width: 20%;
+}
+
+button {
+	width: 20%;
+}
+
+div.Grid {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: var(--BGGC);
+	border-radius: 1%;
+	outline: black solid 2px;
+	justify-content: space-between;
+}
+
+div.Row {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+div.EmptyBlock {
+	aspect-ratio: 1/1;
+	width: 12.25%;
+	height: 98%;
+	background: var(--EBBGC);
+	border-radius: 8%;
+}
+
+div.FullBlock {
+	width: 12.25%;
+	height: 98%;
+	background: var(--FBBGC);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+div.FullBlock::after {
+	display: block;
+	aspect-ratio: 1/1;
+	content: "";
+	margin: 9%;
+	width: 82%;
+	height: 82%;
+
+	background: rgba(160, 0, 0, 0.793);
+	border-radius: 10%;
+}
