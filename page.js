@@ -386,5 +386,5 @@ function RandomShape() {
 }
 
 function dec2bin(dec) {
-	return (dec >>> 0).toString(2);
+	return dec.toString(2);
 }
