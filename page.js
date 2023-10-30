@@ -16,7 +16,6 @@ function Generate(Dec) {
 		x = 8 - (i % 8);
 		y = 8 - Math.floor(i / 8);
 		id = x.toString() + "/" + y.toString();
-alert(id);
 		document.getElementById(id).className = Class;
 	}
 }
