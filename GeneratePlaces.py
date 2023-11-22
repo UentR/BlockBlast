@@ -18,7 +18,8 @@ for key, value in data.items():
                     Temp += 2**((Y*8)+X)
                 Final[key].append(np.uint(Temp))
 
-print(Final.values(), file=open('Temp.txt', "w"))
+
+print(Final, file=open('PiecesPlaces.json', "w"))
 
 
 # print(sum(len(T) for T in Final.values()))
