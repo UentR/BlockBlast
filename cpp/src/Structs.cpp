@@ -54,6 +54,8 @@ void ShowPieces() {
 
 ostream& operator<<(ostream& os, const Board& board) {
     ULL power = pow(2, 63);
+    cout << Top << endl;
+    cout << Vertical << " ";
     for (int i=63; i>=0; i--) {
         if (board.getBoard() & power) {
             os << "⬛";
@@ -61,16 +63,20 @@ ostream& operator<<(ostream& os, const Board& board) {
             os << "⬜";
         }
         if (i % 8 == 0 && i != 0) {
-            os << "\n";
+            os << Vertical << "\n" << Vertical << " ";
         }
         power >>= 1;
     }
+    cout << Vertical << endl;
+    cout << Bottom;
     return os;
 }
 
 ostream& operator<<(ostream& os, const Move& move) {
     ULL power = pow(2, 63);
     ULL PieceBitMask = (ULL)move.p.BitMask.Bits << (move.Y*8 + move.X);
+    cout << Top << endl;
+    cout << Vertical;
     for (int i=63; i>=0; i--) {
         if (PieceBitMask & power) {
             os << "⬛";
@@ -78,10 +84,12 @@ ostream& operator<<(ostream& os, const Move& move) {
             os << "⬜";
         }
         if (i % 8 == 0 && i != 0) {
-            os << "\n";
+            os << Vertical << "\n" << Vertical;
         }
         power >>= 1;
     }
+    cout << Vertical << endl;
+    cout << Bottom;
     return os;
 }
 

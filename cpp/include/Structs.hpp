@@ -4,10 +4,17 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <string>
 
 #define ULL unsigned long long
 
 using namespace std;
+
+const string Vertical = "┃";
+const string Top = "┏━━━━━━━━━━━━━━━━━┓";
+const string Bottom = "┗━━━━━━━━━━━━━━━━━┛";
+
+
 
 struct Mask {
     int Bits;

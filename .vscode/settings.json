@@ -3,7 +3,9 @@
         "iosfwd": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xstring": "cpp",
+        "cmath": "cpp"
     },
     "makefile.configureOnOpen": false
 }
