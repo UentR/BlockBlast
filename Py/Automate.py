@@ -3,10 +3,11 @@ from multiprocessing import Process, Manager
 
 BASE = 8
 
-COLUMNS = np.array([np.uint(sum(2**(BASE*j+c) for j in range(BASE))) for c in range(BASE)])
+COLUMNS = print(np.array([sum(2**(BASE*j+c) for j in range(BASE)) for c in range(BASE)]))
 ROWS = np.array([np.uint(sum(2**(BASE*c+j) for j in range(BASE))) for c in range(BASE)])
 
 def NewState(State):
+    # doesn't work if row and column
     New = State
     for c in COLUMNS:
         if State&c == c:

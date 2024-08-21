@@ -4,10 +4,10 @@
 
 body {
 	--size: min(90vw, 50vh);
-	--BGC: #f9f8f6;
-	--BGGC: #ff00ff;
-	--EBBGC: #c7cedb;
-	--FBBGC: red;
+	--BGC: #f9f8f6; 	/* Background Color */
+	--BGGC: #ff00ff; 	/* Background Grid Color */
+	--EBBGC: #c7cedb;	/* Empty Block Background Color */
+	--FBBGC: red;		/* Full Block Background Color */
 
 	font-family: "Poppins", sans-serif;
 	background: var(--BGC);
@@ -84,7 +84,7 @@ div.Grid {
 	justify-content: space-between;
 }
 
-div.Row {
+.Row {
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -92,7 +92,7 @@ div.Row {
 	justify-content: space-around;
 }
 
-div.EmptyBlock {
+.EmptyBlock {
 	aspect-ratio: 1/1;
 	width: 12.25%;
 	height: 98%;
