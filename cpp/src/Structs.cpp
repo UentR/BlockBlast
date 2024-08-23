@@ -138,10 +138,10 @@ vector<Move> Board::AllMoveForPiece(Piece p) const {
 }
 
 vector<Board> Board::AllPossibilities() const {
-    if (pieces.size() == 0) return {*this};
+    if (CurrentPieces.size() == 0) return {*this};
 
     vector<Board> NewBoards;
-    for (Piece P : pieces) {                        // Loop through pieces available
+    for (Piece P : CurrentPieces) {                 // Loop through pieces available
         for (Move M : AllMoveForPiece(P)) {         // Loop through all possibilities with said piece (I)
             Board B = *this + M;                    // Create a new board with said piece
             B.removePiece(P);                       // Remove said piece
@@ -151,4 +151,41 @@ vector<Board> Board::AllPossibilities() const {
         }
     }
     return NewBoards;
+}
+
+int Board::getPoints() const {
+    int points = 0;
+    ULL power = BitMaskBoard;
+    for (int i=0; i<64; i++) {
+        points += Coeffs[i] * (power & 1);
+        power >>= 1;
+    }
+    return points;
+}
+
+void Board::MakeMove() {
+    int min = 18900;
+    vector<Board> BestPossibilities = {};
+    for (Board b : AllPossibilities()) {
+        if (b.countBits() < min) {
+            min = b.countBits();
+            BestPossibilities.clear();
+        } else if (b.countBits() == min) {
+            BestPossibilities.push_back(b);
+        }
+    }
+    if (BestPossibilities.size() == 0) {
+        for (int i=0; i<3; i++) {
+            cout << CurrentPieces[i] << endl;
+        }
+        cout << "Game Over" << endl;
+        cout << points << " turn" << endl;
+        exit(0);
+    }
+    *this = BestPossibilities[rand() % BestPossibilities.size()];
+    points += 1;
+    // CurrentPieces.clear();
+    for (int i=0; i<3; i++) {
+        CurrentPieces.push_back(pieces[rand() % 41]);
+    }
 }
